@@ -7,6 +7,11 @@ import (
 	"net/http"
 )
 
+type Player struct{
+	Name string
+}
+
+var player Player
 
 const(
 	templateDir = "templates/"
@@ -15,17 +20,35 @@ const(
 
 // Funcion para enrutar
 func Index(w http.ResponseWriter, r *http.Request) {
+	restarValue()
 	renderTemplate(w, "index.html", nil)
 	
 }
 
 func NewGame(w http.ResponseWriter, r *http.Request) {
+
 	renderTemplate(w, "newGame.html", nil)
 
 }
 
 func Game(w http.ResponseWriter, r *http.Request) {
-	renderTemplate(w,"game.html", nil)
+
+	if r.Method == "POST"{
+		err := r.ParseForm()
+		if err != nil {
+			http.Error(w, "Error parsing form", http.StatusBadRequest)
+			return
+		}
+
+		player.Name = r.Form.Get("name")
+	}
+
+	if player.Name == ""{
+		http.Redirect(w,r, "/new", http.StatusFound)
+	}
+
+	fmt.Println(player.Name)
+	renderTemplate(w,"game.html", player)
 
 }
 
@@ -46,7 +69,7 @@ func renderTemplate(w http.ResponseWriter, page string, data any){
 	//Con templates se puede renderizar las plantillas
 	tpl := template.Must(template.ParseFiles( templateBase, templateDir + page))
 	
-	err := tpl.ExecuteTemplate(w, "base", nil)
+	err := tpl.ExecuteTemplate(w, "base", data)
 
 	if err != nil {
 		http.Error(w, "No se ha podido cargar", http.StatusInternalServerError)
@@ -54,4 +77,9 @@ func renderTemplate(w http.ResponseWriter, page string, data any){
 		return
 	}
 	
+}
+
+//Reinicir valores
+func restarValue(){
+	player.Name = ""
 }

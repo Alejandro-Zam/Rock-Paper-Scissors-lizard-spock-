@@ -4,6 +4,21 @@
 
 {{ define "content" }}
 
-<h1> New Game </h1>
+<section>
+    <div class="container">
+        <div class="row">
+            <h2 class="text-center py-4"> Ingresa tu nombre </h2>
+
+            <form action="/game" method="post">
+                <div class="mb-3">
+                    <input type="text" required placeholder="Ingresa tu nombre" name="name" class="form-control">
+                    <div class="d-gird gap-2 py-4">
+                        <button type="submit" class="btn btn-success btn-lg"> Empezar a jugar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
 
 {{ end }}

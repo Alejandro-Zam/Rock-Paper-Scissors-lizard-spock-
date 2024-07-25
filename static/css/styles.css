@@ -1,6 +1,7 @@
 header{
     padding: 20px 0;
     background-color: #114d4d ;
+    /**/
 }
 
 header .logo a{
@@ -18,24 +19,5 @@ header nav a{
 }
 
 header nav a:hover{
-    color: #6e9987;
-}
-
-body{
-    background-color: #97a7a9;
-}
-
-.small-container {
-    max-width: 1600px; /* Ajusta este valor según lo pequeño que quieras el contenedor */
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.small-container img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+    color: #ffffff;
 }
