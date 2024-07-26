@@ -11,23 +11,23 @@
                 <h2>{{.Name}} </h2>
                 <p class="fw-bold" id="player_score">0</p>
                 <div class="d-gird gap-2 card p-3">
-                    <button class="btn btn-outline-success">
+                    <button class="btn btn-outline-success" onclick="choose(0)">
                         <img src="static/img/rock.png" alt="rock" width="50" class="img-fluid">
                         <span class="fw-bold">Piedra</span>
                     </button>
-                    <button class="btn btn-outline-success">
+                    <button class="btn btn-outline-success" onclick="choose(1);">
                         <img src="static/img/papel.png" alt="papel" width="50" class="img-fluid">
                         <span class="fw-bold">Papel</span>
                     </button >
-                    <button class="btn btn-outline-success">
+                    <button class="btn btn-outline-success" onclick="choose(2);">
                         <img src="static/img/tijeras.png" alt="tijeras" width="50" class="img-fluid">
                         <span class="fw-bold">Tijera</span>
                     </button>
-                    <button class="btn btn-outline-success">
+                    <button class="btn btn-outline-success" onclick="choose(3);">
                         <img src="static/img/lagarto.png" alt="lagarto" width="50" class="img-fluid">
                         <span class="fw-bold">lagarto</span>
                     </button>
-                    <button class="btn btn-outline-success">
+                    <button class="btn btn-outline-success" onclick="choose(4);">
                         <img src="static/img/spock.png" alt="spock" width="50" class="img-fluid">
                         <span class="fw-bold">spock</span>
                     </button>
@@ -51,9 +51,9 @@
         <div class="row">
             <h1>Resumen</h1>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item" id="player_choice">El jugador eligió ROCK</li>
-                <li class="list-group-item" id="computer_choice">ChatGpt eligó Spock</li>
-                <li class="list-group-item" id="round_result">Chat GPT WINNER!!!!</li>
+                <li class="list-group-item" id="player_choice">El jugador eligió ...</li>
+                <li class="list-group-item" id="computer_choice">ChatGpt eligó ...</li>
+                <li class="list-group-item" id="round_result">¿WINNER?</li>
                 <li class="list-group-item" id="round_message">Mensaje jajaja!</li>
             </ul>
         </div>
@@ -64,4 +64,7 @@
         </div>
     </div>
 </section>
+
+
+<script src="../static/js/main.js" defer></script>
 {{ end }}

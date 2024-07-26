@@ -100,4 +100,6 @@ func renderTemplate(w http.ResponseWriter, page string, data any){
 //Reinicir valores
 func restarValue(){
 	player.Name = ""
+	logic.ComputerScore = 0
+	logic.PlayerScore = 0
 }

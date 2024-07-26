@@ -43,7 +43,7 @@ var drawMessages = []string{
 	"Here we go again",
 }
 
-var computerScore, playerScore int
+var ComputerScore, PlayerScore int
 
 func PlayRound(playerValue int) Round {
 
@@ -88,8 +88,8 @@ func PlayRound(playerValue int) Round {
 		ComputerChoice: computerChoice,
 		RoundResult: roundResult,
 		ComputerChoiceInt: computerChoiceInt,
-		ComputerScore: strconv.Itoa(computerScore),
-		PlayerScore: strconv.Itoa(playerScore),
+		ComputerScore: strconv.Itoa(ComputerScore),
+		PlayerScore: strconv.Itoa(PlayerScore),
 	}
 
 }
@@ -106,52 +106,52 @@ func determinarGanador(computerValue, playerValue int)(string, string){
 	switch playerValue{
 		case ROCK:
 			if computerValue == LAGARTO || computerValue == TIJERA{
-				playerScore++
+				PlayerScore++
 				roundResult = "Jugador Gana"
 				message = winMessages[messageInt]		
 			}else{
-				computerScore++
+				ComputerScore++
 				roundResult = "ChatGPT Gana"
 				message = loseMessages[messageInt]
 			}
 		case PAPER:
 			if computerValue == ROCK || computerValue == SPOCK{
-				playerScore++
+				PlayerScore++
 				roundResult = "Jugador Gana"
 				message = winMessages[messageInt]		
 			}else{
-				computerScore++
+				ComputerScore++
 				roundResult = "ChatGPT Gana"
 				message = loseMessages[messageInt]
 			}
 		case TIJERA:
 			if computerValue == PAPER || computerValue == LAGARTO{
-				playerScore++
+				PlayerScore++
 				roundResult = "Jugador Gana"
 				message = winMessages[messageInt]		
 			}else{
-				computerScore++
+				ComputerScore++
 				roundResult = "ChatGPT Gana"
 				message = loseMessages[messageInt]
 			}
 		case LAGARTO:
 			if computerValue == PAPER || computerValue == SPOCK{
-				playerScore++
+				PlayerScore++
 				roundResult = "Jugador Gana"
 				message = winMessages[messageInt]		
 			}else{
-				computerScore++
+				ComputerScore++
 				roundResult = "ChatGPT Gana"
 				message = loseMessages[messageInt]
 			}
 		case SPOCK:
 			if computerValue == TIJERA || computerValue == ROCK{
-				playerScore++
+				PlayerScore++
 				roundResult = "Jugador Gana"
 				message = winMessages[messageInt]		
 			
 			}else{
-				computerScore++
+				ComputerScore++
 				roundResult = "ChatGPT Gana"
 				message = loseMessages[messageInt]
 			}
