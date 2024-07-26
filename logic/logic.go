@@ -1,6 +1,9 @@
 package logic
 
-import "math/rand"
+import (
+	"math/rand"
+	"strconv"
+)
 
 const (
 	ROCK    = 0 // Piedra aplasta a lagarto y a tijera
@@ -80,6 +83,14 @@ func PlayRound(playerValue int) Round {
 		message, roundResult = determinarGanador(computerValue, playerValue)
 	}
 
+	return Round{
+		Message: message,
+		ComputerChoice: computerChoice,
+		RoundResult: roundResult,
+		ComputerChoiceInt: computerChoiceInt,
+		ComputerScore: strconv.Itoa(computerScore),
+		PlayerScore: strconv.Itoa(playerScore),
+	}
 
 }
 
@@ -88,7 +99,7 @@ func determinarGanador(computerValue, playerValue int)(string, string){
 
 	var message, roundResult string
 	//Mensaje aleatorio
-	messageInt := rand.Intn(5)
+	messageInt := rand.Intn(4)
 	
 
 
